@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College AI - Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="auth-page">
+<div class="auth-card">
+    <h1>🏫 College Information AI</h1>
+    <h2>Create Account</h2>
+    {% with messages = get_flashed_messages() %}
+      {% for msg in messages %}<p class="alert">{{ msg }}</p>{% endfor %}
+    {% endwith %}
+    <form method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" minlength="6" required>
+        <select name="role">
+            <option value="student">Student</option>
+            <option value="parent">Parent</option>
+            <option value="visitor">Visitor</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already registered? <a href="{{ url_for('login') }}">Login</a></p>
+</div>
+</body>
+</html>

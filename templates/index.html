@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Information AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="app">
+    <header>
+        <div>
+            <h1>🏫 College Information AI</h1>
+            <small>Welcome, {{ name }} ({{ role }})</small>
+        </div>
+        <a class="logout" href="{{ url_for('logout') }}">Logout</a>
+    </header>
+
+    <main class="chat-layout">
+        <section class="chat-card">
+            <div id="messages" class="messages">
+                <div class="bot msg">🤖 Hello {{ name }}! How can I help you with college information?</div>
+            </div>
+
+            <div class="input-row">
+                <input id="message" type="text" placeholder="Ask your college question..." autocomplete="off">
+                <button id="micBtn" title="Voice input">🎤</button>
+                <button id="sendBtn">➤</button>
+            </div>
+
+            <div class="quick-buttons">
+                <button onclick="ask('What courses are available?')">🎓 Courses</button>
+                <button onclick="ask('What is the admission process?')">📝 Admission</button>
+                <button onclick="ask('What is the college fee?')">💰 Fees</button>
+                <button onclick="ask('When are semester exams?')">📅 Calendar</button>
+                <button onclick="ask('What are the library timings?')">📚 Library</button>
+                <button onclick="ask('What hostel facilities are available?')">🏠 Hostel</button>
+                <button onclick="ask('What are the canteen timings?')">🍽️ Canteen</button>
+                <button onclick="ask('What are the bus routes?')">🚌 Transport</button>
+                <button onclick="ask('What are the latest announcements?')">📢 Announcements</button>
+                <button onclick="ask('Where is the Computer Science department?')">📍 Navigation</button>
+                <button onclick="ask('How can I contact the admission office?')">📞 Contact</button>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

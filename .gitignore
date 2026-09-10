@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+college.db
+.env
+venv/
+.venv/
